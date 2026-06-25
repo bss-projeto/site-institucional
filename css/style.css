@@ -55,10 +55,18 @@
     height: 72px;
   }
   .logo {
-    font-family: var(--font-display);
-    font-weight: 900; font-size: 26px;
-    color: var(--white); letter-spacing: .04em;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
+    color: var(--white);
+  }
+  .logo:hover {
+    transform: translateY(-1px);
+  }
+  .logo img {
+    display: block;
+    max-height: 50px;
+    width: auto;
   }
   .logo span { color: var(--accent); }
   .nav-links { display: flex; gap: 32px; list-style: none; }
