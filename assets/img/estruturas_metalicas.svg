@@ -1,0 +1,71 @@
+<svg width="100%" viewBox="0 0 680 420" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Estruturas Metálicas</title>
+<desc>Ilustração de estruturas metálicas industriais com vigas, treliças e conexões</desc>
+<rect width="680" height="420" fill="#1a1f2e"/>
+<line x1="0" y1="60" x2="680" y2="60" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="0" y1="120" x2="680" y2="120" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="0" y1="180" x2="680" y2="180" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="0" y1="240" x2="680" y2="240" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="0" y1="300" x2="680" y2="300" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="0" y1="360" x2="680" y2="360" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="80" y1="0" x2="80" y2="420" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="160" y1="0" x2="160" y2="420" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="240" y1="0" x2="240" y2="420" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="320" y1="0" x2="320" y2="420" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="400" y1="0" x2="400" y2="420" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="480" y1="0" x2="480" y2="420" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="560" y1="0" x2="560" y2="420" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<line x1="640" y1="0" x2="640" y2="420" stroke="#252d42" stroke-width="0.5" opacity="0.5"/>
+<rect x="0" y="310" width="680" height="110" fill="#141824"/>
+<rect x="60" y="80" width="8" height="240" fill="#3a4460"/>
+<rect x="200" y="80" width="8" height="240" fill="#3a4460"/>
+<rect x="340" y="60" width="8" height="260" fill="#3a4460"/>
+<rect x="480" y="80" width="8" height="240" fill="#3a4460"/>
+<rect x="620" y="80" width="8" height="240" fill="#3a4460"/>
+<rect x="52" y="78" width="24" height="8" fill="#e85d04"/>
+<rect x="192" y="78" width="24" height="8" fill="#e85d04"/>
+<rect x="332" y="58" width="24" height="8" fill="#e85d04"/>
+<rect x="472" y="78" width="24" height="8" fill="#e85d04"/>
+<rect x="612" y="78" width="24" height="8" fill="#e85d04"/>
+<rect x="52" y="306" width="24" height="10" fill="#e85d04"/>
+<rect x="192" y="306" width="24" height="10" fill="#e85d04"/>
+<rect x="332" y="306" width="24" height="10" fill="#e85d04"/>
+<rect x="472" y="306" width="24" height="10" fill="#e85d04"/>
+<rect x="612" y="306" width="24" height="10" fill="#e85d04"/>
+<rect x="55" y="82" width="570" height="10" fill="#4a5570"/>
+<rect x="55" y="300" width="570" height="10" fill="#4a5570"/>
+<rect x="55" y="190" width="570" height="8" fill="#3a4460"/>
+<line x1="64" y1="82" x2="204" y2="190" stroke="#5a6480" stroke-width="3"/>
+<line x1="204" y1="82" x2="64" y2="190" stroke="#5a6480" stroke-width="3"/>
+<line x1="204" y1="82" x2="344" y2="190" stroke="#5a6480" stroke-width="3"/>
+<line x1="344" y1="62" x2="204" y2="190" stroke="#5a6480" stroke-width="3"/>
+<line x1="344" y1="62" x2="484" y2="190" stroke="#5a6480" stroke-width="3"/>
+<line x1="484" y1="82" x2="344" y2="190" stroke="#5a6480" stroke-width="3"/>
+<line x1="484" y1="82" x2="624" y2="190" stroke="#5a6480" stroke-width="3"/>
+<line x1="624" y1="82" x2="484" y2="190" stroke="#5a6480" stroke-width="3"/>
+<line x1="64" y1="194" x2="204" y2="300" stroke="#5a6480" stroke-width="3"/>
+<line x1="204" y1="194" x2="64" y2="300" stroke="#5a6480" stroke-width="3"/>
+<line x1="204" y1="194" x2="344" y2="300" stroke="#5a6480" stroke-width="3"/>
+<line x1="344" y1="194" x2="204" y2="300" stroke="#5a6480" stroke-width="3"/>
+<line x1="344" y1="194" x2="484" y2="300" stroke="#5a6480" stroke-width="3"/>
+<line x1="484" y1="194" x2="344" y2="300" stroke="#5a6480" stroke-width="3"/>
+<line x1="484" y1="194" x2="624" y2="300" stroke="#5a6480" stroke-width="3"/>
+<line x1="624" y1="194" x2="484" y2="300" stroke="#5a6480" stroke-width="3"/>
+<circle cx="64" cy="190" r="6" fill="#e85d04"/>
+<circle cx="204" cy="190" r="6" fill="#e85d04"/>
+<circle cx="344" cy="190" r="6" fill="#e85d04"/>
+<circle cx="484" cy="190" r="6" fill="#e85d04"/>
+<circle cx="624" cy="190" r="6" fill="#e85d04"/>
+<circle cx="64" cy="86" r="5" fill="#ff6b1a"/>
+<circle cx="204" cy="86" r="5" fill="#ff6b1a"/>
+<circle cx="344" cy="66" r="5" fill="#ff6b1a"/>
+<circle cx="484" cy="86" r="5" fill="#ff6b1a"/>
+<circle cx="624" cy="86" r="5" fill="#ff6b1a"/>
+<circle cx="64" cy="304" r="5" fill="#ff6b1a"/>
+<circle cx="204" cy="304" r="5" fill="#ff6b1a"/>
+<circle cx="344" cy="304" r="5" fill="#ff6b1a"/>
+<circle cx="484" cy="304" r="5" fill="#ff6b1a"/>
+<circle cx="624" cy="304" r="5" fill="#ff6b1a"/>
+<rect x="0" y="316" width="680" height="6" fill="#e85d04" opacity="0.9"/>
+<text x="340" y="395" text-anchor="middle" fill="#e85d04" font-size="13" font-family="sans-serif" font-weight="700" letter-spacing="3">ESTRUTURAS METÁLICAS</text>
+</svg>

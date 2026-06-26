@@ -1,3 +1,36 @@
+// ── Contact Info (Centralized) ──
+const contactInfo = {
+  email: 'engenharia@bssprojetos.com',
+  phone: '+55 (16) 99279-0880',
+  whatsapp: 'https://wa.me/5516992790880',
+  linkedin: 'https://www.linkedin.com/company/82604793',
+  instagram: 'https://www.instagram.com/projetosbss/',
+  facebook: 'https://www.facebook.com/bssprojetos'
+};
+
+// Populate contact links
+function populateContactLinks() {
+  document.querySelectorAll('[data-contact-href]').forEach(el => {
+    const key = el.dataset.contactHref;
+    if (key === 'email') {
+      el.href = `mailto:${contactInfo.email}`;
+    } else if (key === 'phone') {
+      el.href = contactInfo.whatsapp;
+    } else if (contactInfo[key]) {
+      el.href = contactInfo[key];
+    }
+  });
+  
+  document.querySelectorAll('[data-contact-text]').forEach(el => {
+    const key = el.dataset.contactText;
+    if (key === 'email') {
+      el.textContent = contactInfo.email;
+    } else if (key === 'phone') {
+      el.textContent = contactInfo.phone;
+    }
+  });
+}
+
 // ── Mobile menu ──
   const btn = document.getElementById('menu-btn');
   const menu = document.getElementById('mobile-menu');
@@ -71,3 +104,6 @@
       ? 'rgba(13,27,42,.98)'
       : 'rgba(13,27,42,.95)';
   });
+
+  // ── Initialize contact info ──
+  populateContactLinks();
