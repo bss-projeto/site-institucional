@@ -95,12 +95,12 @@ function populateContactLinks() {
     { src: './assets/img/logos/Logo_Tereos_2016_final.png', alt: 'Tereos' },
     { src: './assets/img/logos/marcato_final.png', alt: 'Marcato' },
     { src: './assets/img/logos/minerva_final.png', alt: 'Minerva' },
-    { src: './assets/img/logos/realquimica_logo_edited_final.png', alt: 'Realquímica' },
     { src: './assets/img/logos/realquimica_logo_final.png', alt: 'Realquímica' },
     { src: './assets/img/logos/scala_final.png', alt: 'Scala' },
     { src: './assets/img/logos/sodru_final.png', alt: 'Sodru' },
     { src: './assets/img/logos/usina Cerradão_final.png', alt: 'Usina Cerradão' },
-    { src: './assets/img/logos/__final.png', alt: 'Logo' }
+    { src: './assets/img/logos/__final.png', alt: 'Garra Fundição' },
+    { src: './assets/img/logos/taten-engenharia_final.png', alt: 'Taten Engenharia' }
   ];
 
 const grid = document.getElementById('clients-grid');
