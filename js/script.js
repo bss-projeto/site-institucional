@@ -77,12 +77,54 @@ function populateContactLinks() {
   counters.forEach(c => cObserver.observe(c));
 
   // ── Clients tabs ──
-  function showTab(name, btnEl) {
-    document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + name).style.display = 'flex';
-    btnEl.classList.add('active');
-  }
+
+  const clients = [
+    { src: './assets/img/logos/vittia-grupo.png', alt: 'Vittia' },
+    { src: './assets/img/logos/upl_final.png', alt: 'UPL' },
+    { src: './assets/img/logos/engetrad_final.png', alt: 'Grupo C' },
+    { src: './assets/img/logos/habiarte_final.png', alt: 'Habiarte' },
+    { src: './assets/img/logos/uberpostos_final.png', alt: 'Uberpostos' },
+    { src: './assets/img/logos/bpbunge_final.png', alt: 'BP Bunge' },
+    { src: './assets/img/logos/guabi_final.png', alt: 'Guabi' },
+    { src: './assets/img/logos/alfa_final.png', alt: 'Alfa' },
+    { src: './assets/img/logos/alta mgiana_final.png', alt: 'Alta MGIANA' },
+    { src: './assets/img/logos/bp_bioenergy_final.png', alt: 'BP Bioenergy' },
+    { src: './assets/img/logos/global_mix_final.png', alt: 'Global Mix' },
+    { src: './assets/img/logos/increabase_final.png', alt: 'Increabase' },
+    { src: './assets/img/logos/laminacao_sao_joaquim_final.png', alt: 'Laminação São Joaquim' },
+    { src: './assets/img/logos/Logo_Tereos_2016_final.png', alt: 'Tereos' },
+    { src: './assets/img/logos/marcato_final.png', alt: 'Marcato' },
+    { src: './assets/img/logos/minerva_final.png', alt: 'Minerva' },
+    { src: './assets/img/logos/realquimica_logo_edited_final.png', alt: 'Realquímica' },
+    { src: './assets/img/logos/realquimica_logo_final.png', alt: 'Realquímica' },
+    { src: './assets/img/logos/scala_final.png', alt: 'Scala' },
+    { src: './assets/img/logos/sodru_final.png', alt: 'Sodru' },
+    { src: './assets/img/logos/usina Cerradão_final.png', alt: 'Usina Cerradão' },
+    { src: './assets/img/logos/__final.png', alt: 'Logo' }
+  ];
+
+const grid = document.getElementById('clients-grid');
+
+clients.forEach(({ src, alt }) => {
+  const div = document.createElement('div');
+  div.className = 'client-logo';
+
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = alt;
+  img.loading = 'lazy';
+
+  div.appendChild(img);
+  grid.appendChild(div);
+});
+
+
+  // function showTab(name, btnEl) {
+  //   document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+  //   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  //   document.getElementById('tab-' + name).style.display = 'flex';
+  //   btnEl.classList.add('active');
+  // }
 
   // ── Form submit ──
   function submitForm(e) {
