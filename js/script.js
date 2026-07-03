@@ -100,7 +100,17 @@ function populateContactLinks() {
     { src: './assets/img/logos/sodru_final.png', alt: 'Sodru' },
     { src: './assets/img/logos/usina Cerradão_final.png', alt: 'Usina Cerradão' },
     { src: './assets/img/logos/__final.png', alt: 'Garra Fundição' },
-    { src: './assets/img/logos/taten-engenharia_final.png', alt: 'Taten Engenharia' }
+    { src: './assets/img/logos/taten-engenharia_final.png', alt: 'Taten Engenharia' },
+    { src: './assets/img/logos/smi_final.png', alt: 'SMI' },
+    { src: './assets/img/logos/sso energy_final.png', alt: 'SSO Energy' },
+    { src: './assets/img/logos/solocon_final.png', alt: 'Solocon' },
+    { src: './assets/img/logos/am_braga_final.png', alt: 'AM Braga' },
+    { src: './assets/img/logos/apicetec_final.png', alt: 'Apicetec' },
+    { src: './assets/img/logos/as_engenharia_final.png', alt: 'AS Engenharia' },
+    { src: './assets/img/logos/base_quimica_final.png', alt: 'Base Química' },
+    { src: './assets/img/logos/rezende_final.png', alt: 'Rezende' },
+    { src: './assets/img/logos/hda_lemos_final.png', alt: 'HDA Lemos' },
+    { src: './assets/img/logos/aj_engenharia_final.png', alt: 'AJ Engenharia' }
   ];
 
 const grid = document.getElementById('clients-grid');
