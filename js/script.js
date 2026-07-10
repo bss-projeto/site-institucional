@@ -1,6 +1,6 @@
 // ── Contact Info (Centralized) ──
 const contactInfo = {
-  email: 'engenharia@bssprojetos.com',
+  email: 'sander@bssprojetos.com',
   phone: '+55 (16) 99279-0880',
   whatsapp: 'https://wa.me/5516992790880',
   linkedin: 'https://www.linkedin.com/company/82604793',
@@ -139,13 +139,38 @@ clients.forEach(({ src, alt }) => {
   // ── Form submit ──
   function submitForm(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Mensagem Enviada!';
+
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+
+    const nome = form.querySelector('#nome').value.trim();
+    const empresa = form.querySelector('#empresa').value.trim();
+    const telefone = form.querySelector('#telefone').value.trim();
+    const email = form.querySelector('#email').value.trim();
+    const mensagem = form.querySelector('#mensagem').value.trim();
+
+    const assunto = 'Novo contato pelo formulário do site - BSS Projetos';
+    const corpo = [
+      'Você recebeu um novo contato realizado pelo formulário do site.',
+      '',
+      `Nome: ${nome || 'Não informado'}`,
+      `Empresa: ${empresa || 'Não informada'}`,
+      `Telefone: ${telefone || 'Não informado'}`,
+      `E-mail: ${email || 'Não informado'}`,
+      `Mensagem: ${mensagem || 'Sem mensagem adicional.'}`,
+      '',
+      `Enviado em: ${new Date().toLocaleString('pt-BR')}`
+    ].join('\n');
+
+    window.location.href = `mailto:${contactInfo.email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+
+    btn.textContent = '✓ Mensagem Pronta para Envio';
     btn.style.background = '#25a244';
+
     setTimeout(() => {
       btn.textContent = 'Solicitar Proposta →';
       btn.style.background = '';
-      e.target.reset();
+      form.reset();
     }, 3000);
   }
 
@@ -153,8 +178,8 @@ clients.forEach(({ src, alt }) => {
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('main-nav');
     nav.style.background = window.scrollY > 60
-      ? 'rgba(13,27,42,.98)'
-      : 'rgba(13,27,42,.95)';
+      ? '226, 228, 231, 0.98'
+      : '226, 228, 231, 0.95';
   });
 
   // ── Initialize contact info ──
