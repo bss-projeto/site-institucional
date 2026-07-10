@@ -12,7 +12,7 @@
 <body>
 
 <!-- TOP BAR -->
-<div class="topbar">
+<!-- <div class="topbar">
   <div class="inner">
     <div class="links">
       <a data-contact-href="email" data-contact-text="email">✉ </a>
@@ -23,13 +23,13 @@
       <a data-contact-href="instagram" target="_blank">◉ Instagram</a>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- NAV -->
 <nav id="main-nav">
   <div class="nav-inner">
     <a class="logo" href="#inicio">
-      <img src="assets/img/logo-bss-white.png" alt="BSS Projetos Engenharia" />
+      <img src="assets/img/logo-bss.png" alt="BSS Projetos Engenharia" />
     </a>
     <ul class="nav-links">
       <li><a href="#quem-somos">Quem Somos</a></li>
@@ -62,7 +62,7 @@
     <div>
       <div class="hero-eyebrow">Engenharia Industrial</div>
       <h1>Engenharia para<br><em>Implantação,</em><br>Expansão e<br>Modernização<br>Industrial</h1>
-      <p class="hero-sub">Mais de 30 anos de experiência e mais de 3.000 projetos desenvolvidos nos setores sucroenergético, fertilizantes, químico e armazenagem de grãos.</p>
+      <p class="hero-sub">Mais de 30 anos de experiência e mais de 3.000 projetos desenvolvidos nos setores sucroenergético, fertilizantes, químico, armazenagem de grãos entre outros.</p>
       <div class="hero-btns">
         <a class="btn-primary" href="#contato">Solicitar Proposta</a>
         <a class="btn-outline" data-contact-href="phone" target="_blank">Falar com Especialista</a>
@@ -241,7 +241,7 @@
             <div class="feat-icon">📐</div>
             <div class="feat-text">
               <h4>Engenharia Multidisciplinar</h4>
-              <p>Civil, estrutural e operacional integrados num único escritório.</p>
+              <p>Civil, estrutural, mecânica, elétrica e de processos num único escritório.</p>
             </div>
           </div>
           <div class="about-feat">
@@ -308,7 +308,7 @@
 </section>
 
 <!-- SOLUÇÕES -->
-<section class="section" id="solucoes">
+<!-- <section class="section" id="solucoes">
   <div class="section-inner">
     <div class="eyebrow reveal">Soluções de Engenharia</div>
     <h2 class="section-title reveal">Do Projeto ao Detalhe<br>Executivo</h2>
@@ -380,7 +380,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CASES -->
 <section class="section cases" id="cases">
@@ -466,9 +466,9 @@
         <p class="diff-text">Foco total em empreendimentos industriais. Conhecemos os desafios de cada setor.</p>
       </div>
       <div class="diff-item">
-        <div class="diff-icon">🔩</div>
+        <div class="diff-icon">⚙️</div>
         <div class="diff-title">Engenharia Multidisciplinar</div>
-        <p class="diff-text">Civil, estrutural e operacional integrados. Um único escritório, visão completa do projeto.</p>
+        <p class="diff-text">Civil, estrutural, mecânica, elétrica e de processos. Um único escritório, visão completa do projeto.</p>
       </div>
       <div class="diff-item">
         <div class="diff-icon">🏗️</div>
@@ -486,27 +486,27 @@
     <h2 class="section-title reveal">Conhecimento que<br>Gera Confiança</h2>
     <div class="blog-grid reveal">
       <div class="post-card">
-        <span class="post-tag">Fundações</span>
+        <!-- <span class="post-tag">Fundações</span> -->
         <div class="post-title">Como Projetar Fundações para Equipamentos Industriais</div>
         <p class="post-excerpt">Os principais critérios técnicos para dimensionamento de fundações sob cargas dinâmicas, vibrações e equipamentos pesados em plantas industriais.</p>
       </div>
       <div class="post-card">
-        <span class="post-tag">Estruturas Metálicas</span>
+        <!-- <span class="post-tag">Estruturas Metálicas</span> -->
         <div class="post-title">Principais Erros em Estruturas Metálicas Industriais</div>
         <p class="post-excerpt">Do detalhamento de ligações ao dimensionamento de pilares: os erros mais comuns que comprometem a segurança e a vida útil das estruturas.</p>
       </div>
       <div class="post-card">
-        <span class="post-tag">Inspeção Estrutural</span>
+        <!-- <span class="post-tag">Inspeção Estrutural</span> -->
         <div class="post-title">Inspeção Estrutural em Armazéns de Açúcar</div>
         <p class="post-excerpt">Metodologia de inspeção e avaliação estrutural para armazéns de açúcar a granel — patologias frequentes e critérios de intervenção.</p>
       </div>
       <div class="post-card">
-        <span class="post-tag">Pisos Industriais</span>
+        <!-- <span class="post-tag">Pisos Industriais</span> -->
         <div class="post-title">Critérios para Pisos Industriais de Alto Desempenho</div>
         <p class="post-excerpt">Espessura, juntas, armação e acabamento: o que determina a performance e a durabilidade de pisos em concreto armado industrial.</p>
       </div>
       <div class="post-card">
-        <span class="post-tag">Tanques</span>
+        <!-- <span class="post-tag">Tanques</span> -->
         <div class="post-title">Projeto de Tanques Industriais: Aspectos Críticos</div>
         <p class="post-excerpt">Pressão hidrostática, corrosão e ancoragem — as variáveis que mais impactam o projeto de reservatórios e tanques industriais.</p>
       </div>
@@ -603,30 +603,33 @@
           </div>
         </div>
       </div>
-      <form class="contact-form" onsubmit="submitForm(event)">
+      <form class="contact-form" id="contact-form" onsubmit="submitForm(event)">
+        <input type="hidden" name="_subject" value="Novo contato pelo formulário do site - BSS Projetos">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <div class="form-row">
           <div class="form-group">
             <label for="nome">Nome *</label>
-            <input type="text" id="nome" placeholder="Seu nome completo" required>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
           </div>
           <div class="form-group">
             <label for="empresa">Empresa *</label>
-            <input type="text" id="empresa" placeholder="Nome da empresa" required>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" placeholder="+55 (00) 00000-0000">
+            <input type="tel" id="telefone" name="telefone" placeholder="+55 (00) 00000-0000">
           </div>
           <div class="form-group">
             <label for="email">E-mail *</label>
-            <input type="email" id="email" placeholder="seu@email.com" required>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
           </div>
         </div>
         <div class="form-group">
           <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" rows="5" placeholder="Descreva seu projeto ou necessidade..."></textarea>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva seu projeto ou necessidade..."></textarea>
         </div>
         <button type="submit" class="form-submit">Solicitar Proposta →</button>
       </form>

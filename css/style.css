@@ -44,10 +44,10 @@
 
   /* ─── NAV ─── */
   nav {
-    background: rgba(13,27,42,.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(16px);
     position: sticky; top: 0; z-index: 100;
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 1px solid rgba(255,255,255,.22);
   }
   .nav-inner {
     max-width: 1200px; margin: 0 auto; padding: 0 24px;
@@ -58,14 +58,20 @@
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: var(--white);
+    color: var(--ink);
+    background: #ffffff;
+    padding: 10px 14px;
+    border-radius: 4px; 
+    box-shadow: 0 14px 25px rgba(0,0,0,.12);
+    transition: transform .2s, box-shadow .2s;
   }
   .logo:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 28px rgba(0,0,0,.18);
   }
   .logo img {
     display: block;
-    max-height: 50px;
+    max-height: 42px;
     width: auto;
   }
   .logo span { color: var(--accent); }
