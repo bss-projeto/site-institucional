@@ -344,9 +344,37 @@
     position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(13,27,42,.92) 0%, rgba(13,27,42,.2) 60%, transparent 100%);
   }
+  .market-media {
+    position: absolute; inset: 0 0 auto 0;
+    height: calc(100% * 2 / 3);
+    z-index: 1;
+    margin: 16px;
+    opacity: 0.9;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .market-media img {
+    width: 100%; height: 100%; display: block; object-fit: cover;
+  }
+  .market-media .label {
+    position: absolute; bottom: 12px; left: 12px;
+    font-family: var(--font-display); font-size: 11px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--white); background: rgba(232,97,26,.85); padding: 4px 10px;
+    margin-bottom: 16px; display: inline-block;
+    z-index: 2;
+  }
+  .market-card:first-child .market-content {
+    position: absolute; left: 0; right: 0; top: calc(100% * 2 / 3); bottom: 0;
+    padding: 24px 24px 28px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    z-index: 2;
+  }
   .market-content {
     position: absolute; bottom: 0; left: 0; right: 0;
     padding: 28px 24px;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(13,27,42,0) 0%, rgba(13,27,42,.55) 30%, rgba(13,27,42,.95) 100%);
   }
   .market-icon { font-size: 28px; margin-bottom: 12px; display: block; }
   .market-name {
@@ -717,6 +745,27 @@
   @media (max-width: 768px) {
     .nav-links, .nav-cta { display: none; }
     .hamburger { display: flex; }
+    .market-card {
+      display: flex; flex-direction: column;
+      min-height: auto;
+      aspect-ratio: auto;
+    }
+    .market-media {
+      position: relative; inset: auto;
+      height: 240px; margin: 0;
+      z-index: 1;
+    }
+    .market-card:first-child .market-content {
+      position: relative; inset: auto;
+      top: auto; bottom: auto;
+      padding: 24px 24px 28px;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      z-index: 2;
+    }
+    .market-content {
+      position: relative; inset: auto;
+      padding: 24px;
+    }
     .numbers-grid { grid-template-columns: repeat(2,1fr); }
     .about-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
     .about-visual {
