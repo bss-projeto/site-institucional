@@ -103,12 +103,18 @@
   /* ─── HERO ─── */
   .hero {
     position: relative; min-height: 92vh;
-    display: flex; align-items: center;
+    display: flex; align-items: center; justify-content: center;
     overflow: hidden;
+  }
+  .hero-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    z-index: 0;
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, #0D1B2A 0%, #1a2f45 40%, #0f2233 100%);
+    background: linear-gradient(135deg, rgba(13,27,42,.88) 0%, rgba(26,47,69,.80) 35%, rgba(15,34,51,.90) 100%);
+    z-index: 1;
   }
   .hero-bg::before {
     content: '';
@@ -120,18 +126,19 @@
   .hero-bg::after {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(232,97,26,.12) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 70% 50%, rgba(232,97,26,.14) 0%, transparent 60%);
   }
   .hero-content {
     position: relative; z-index: 2;
-    max-width: 1200px; margin: 0 auto; padding: 80px 24px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    max-width: 860px; width: 100%; margin: 0 auto; padding: 80px 24px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 24px;
   }
   .hero-eyebrow {
     font-family: var(--font-display);
     font-size: 13px; font-weight: 700; letter-spacing: .2em;
     text-transform: uppercase; color: var(--accent);
-    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+    display: inline-flex; align-items: center; gap: 12px; margin-bottom: 20px;
   }
   .hero-eyebrow::before { content: ''; width: 32px; height: 2px; background: var(--accent); flex-shrink: 0; }
   .hero h1 {
@@ -143,9 +150,9 @@
   .hero h1 em { font-style: normal; color: var(--accent); }
   .hero-sub {
     font-size: 16px; line-height: 1.65; color: var(--smoke);
-    max-width: 460px; margin-bottom: 44px;
+    max-width: 720px; margin: 0 auto 44px;
   }
-  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
   .btn-primary {
     background: var(--accent); color: var(--white);
     padding: 16px 32px; font-family: var(--font-display);
@@ -165,7 +172,7 @@
 
   /* Hero visual side */
   .hero-visual {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    display: none;
   }
   .hero-img-card {
     background: var(--steel);
