@@ -178,8 +178,8 @@ clients.forEach(({ src, alt }) => {
   window.addEventListener('scroll', () => {
     const nav = document.getElementById('main-nav');
     nav.style.background = window.scrollY > 60
-      ? '226, 228, 231, 0.98'
-      : '226, 228, 231, 0.95';
+      ? 'rgba(255, 255, 255, 0.72)'
+      : '#ffffff';
   });
 
   // ── Initialize contact info ──
