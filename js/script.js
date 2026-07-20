@@ -59,6 +59,46 @@ const blogModalSummary = document.querySelector('.blog-modal-summary');
 const blogModalBody = document.querySelector('.blog-modal-body');
 const closeBlogModalBtn = document.querySelector('.blog-modal-close');
 const blogModalBackdrop = document.querySelector('.blog-modal-backdrop');
+const blogGrid = document.getElementById('blog-grid');
+
+function renderBlogCards() {
+  if (!blogGrid) return;
+
+  const newsletterCard = document.createElement('div');
+  newsletterCard.className = 'post-card post-card-newsletter';
+  newsletterCard.style.background = 'rgba(232,97,26,.1)';
+  newsletterCard.style.borderLeft = '3px solid var(--accent)';
+  newsletterCard.innerHTML = `
+    <span class="post-tag" style="color:var(--accent2)">Newsletter</span>
+    <div class="post-title">Receba Conteúdo Técnico</div>
+    <p class="post-excerpt" style="margin-bottom:20px">Artigos, normas atualizadas e cases de projetos industriais diretamente no seu e-mail.</p>
+    <a class="btn-primary" href="#contato" style="font-size:14px;padding:12px 24px">Quero Receber</a>
+  `;
+
+  Object.entries(blogArticles).forEach(([postId, article]) => {
+    const card = document.createElement('div');
+    card.className = 'post-card';
+    card.setAttribute('data-post-id', postId);
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.innerHTML = `
+      <div class="post-title">${article.title}</div>
+      <p class="post-excerpt">${article.summary}</p>
+    `;
+
+    card.addEventListener('click', () => openBlogModal(postId));
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openBlogModal(postId);
+      }
+    });
+
+    blogGrid.appendChild(card);
+  });
+
+  blogGrid.appendChild(newsletterCard);
+}
 
 function openBlogModal(postId) {
   const article = blogArticles[postId];
@@ -79,15 +119,7 @@ function closeBlogModal() {
   document.body.classList.remove('modal-open');
 }
 
-document.querySelectorAll('.post-card[data-post-id]').forEach(card => {
-  card.addEventListener('click', () => openBlogModal(card.dataset.postId));
-  card.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      openBlogModal(card.dataset.postId);
-    }
-  });
-});
+renderBlogCards();
 
 closeBlogModalBtn.addEventListener('click', closeBlogModal);
 blogModalBackdrop.addEventListener('click', closeBlogModal);
