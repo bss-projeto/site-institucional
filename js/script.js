@@ -137,42 +137,95 @@ clients.forEach(({ src, alt }) => {
   // }
 
   // ── Form submit ──
-  function submitForm(e) {
-    e.preventDefault();
+  // function submitForm(e) {
+  //   e.preventDefault();
 
-    const form = e.target;
-    const btn = form.querySelector('.form-submit');
+  //   const form = e.target;
+  //   const btn = form.querySelector('.form-submit');
 
-    const nome = form.querySelector('#nome').value.trim();
-    const empresa = form.querySelector('#empresa').value.trim();
-    const telefone = form.querySelector('#telefone').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const mensagem = form.querySelector('#mensagem').value.trim();
+  //   const nome = form.querySelector('#nome').value.trim();
+  //   const empresa = form.querySelector('#empresa').value.trim();
+  //   const telefone = form.querySelector('#telefone').value.trim();
+  //   const email = form.querySelector('#email').value.trim();
+  //   const mensagem = form.querySelector('#mensagem').value.trim();
 
-    const assunto = 'Novo contato pelo formulário do site - BSS Projetos';
-    const corpo = [
-      'Você recebeu um novo contato realizado pelo formulário do site.',
-      '',
-      `Nome: ${nome || 'Não informado'}`,
-      `Empresa: ${empresa || 'Não informada'}`,
-      `Telefone: ${telefone || 'Não informado'}`,
-      `E-mail: ${email || 'Não informado'}`,
-      `Mensagem: ${mensagem || 'Sem mensagem adicional.'}`,
-      '',
-      `Enviado em: ${new Date().toLocaleString('pt-BR')}`
-    ].join('\n');
+  //   const assunto = 'Novo contato pelo formulário do site - BSS Projetos';
+  //   const corpo = [
+  //     'Você recebeu um novo contato realizado pelo formulário do site.',
+  //     '',
+  //     `Nome: ${nome || 'Não informado'}`,
+  //     `Empresa: ${empresa || 'Não informada'}`,
+  //     `Telefone: ${telefone || 'Não informado'}`,
+  //     `E-mail: ${email || 'Não informado'}`,
+  //     `Mensagem: ${mensagem || 'Sem mensagem adicional.'}`,
+  //     '',
+  //     `Enviado em: ${new Date().toLocaleString('pt-BR')}`
+  //   ].join('\n');
 
-    window.location.href = `mailto:${contactInfo.email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+  //   window.location.href = `mailto:${contactInfo.email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
 
-    btn.textContent = '✓ Mensagem Pronta para Envio';
-    btn.style.background = '#25a244';
+  //   btn.textContent = '✓ Mensagem Pronta para Envio';
+  //   btn.style.background = '#25a244';
 
-    setTimeout(() => {
-      btn.textContent = 'Solicitar Proposta →';
-      btn.style.background = '';
+  //   setTimeout(() => {
+  //     btn.textContent = 'Solicitar Proposta →';
+  //     btn.style.background = '';
+  //     form.reset();
+  //   }, 3000);
+  // }
+
+  async function submitForm(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+
+  const nome = form.querySelector('#nome').value.trim();
+  const empresa = form.querySelector('#empresa').value.trim();
+  const telefone = form.querySelector('#telefone').value.trim();
+  const email = form.querySelector('#email').value.trim();
+  const mensagem = form.querySelector('#mensagem').value.trim();
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '4835277f-fdc1-496d-a4f6-c7ec81482531',
+        subject: 'Novo contato pelo formulário do site - BSS Projetos',
+        from_name: nome || 'Site BSS Projetos',
+        nome,
+        empresa,
+        telefone,
+        email,
+        mensagem
+      })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      btn.textContent = '✓ Mensagem Enviada';
+      btn.style.background = '#25a244';
       form.reset();
-    }, 3000);
+    } else {
+      throw new Error(result.message || 'Erro ao enviar');
+    }
+  } catch (err) {
+    btn.textContent = '✗ Erro, tente novamente';
+    btn.style.background = '#c0392b';
+    console.error(err);
   }
+
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.textContent = 'Solicitar Proposta →';
+    btn.style.background = '';
+  }, 3000);
+}
 
   // ── Nav scroll effect ──
   window.addEventListener('scroll', () => {
