@@ -1,3 +1,134 @@
+// ── Blog modal ──
+const blogArticles = {
+  fundacoes: {
+    category: 'Fundação e Equipamentos',
+    title: 'Como Projetar Fundações para Equipamentos Industriais',
+    summary: 'A correta concepção das fundações é um dos fatores que mais impactam a segurança, a estabilidade e a vida útil de equipamentos pesados nas plantas industriais.',
+    body: [
+      '<p>Ao dimensionar fundações para equipamentos industriais, é essencial considerar não apenas o peso estático do equipamento, mas também as cargas dinâmicas geradas por vibração, impacto, torque e operação contínua.</p>',
+      '<p>Em muitos casos, a falha ocorre por subestimar os efeitos do movimento repetitivo, especialmente em máquinas de grande porte, compressores, motores e sistemas de britagem.</p>',
+      '<p>Além do cálculo estrutural, o projeto precisa prever detalhes de execução como profundidade da fundação, tipo de solo, compatibilização com a base do equipamento, proteção contra vibração e futuras intervenções de manutenção.</p>'
+    ]
+  },
+  estruturas: {
+    category: 'Estruturas Metálicas',
+    title: 'Principais Erros em Estruturas Metálicas Industriais',
+    summary: 'Mesmo em estruturas bem concebidas, pequenos erros de detalhamento ou execução podem comprometer a segurança e a durabilidade do empreendimento.',
+    body: [
+      '<p>Um dos erros mais frequentes é o uso de detalhes de ligação incompatíveis com as cargas reais da estrutura, principalmente em situações de sobrecarga, expansão térmica ou movimentação de materiais.</p>',
+      '<p>Outro ponto crítico é a falta de atenção ao detalhamento de pilar, base, conexão e travamentos, que pode gerar concentrações de tensão e deformações excessivas.</p>',
+      '<p>O ideal é integrar projeto estrutural, fabricação e montagem desde a fase inicial para garantir que o que foi calculado seja realmente executável na obra.</p>'
+    ]
+  },
+  inspecao: {
+    category: 'Inspeção e Manutenção',
+    title: 'Inspeção Estrutural em Armazéns de Açúcar',
+    summary: 'A inspeção periódica é essencial para identificar sinais de deterioração antes que se tornem problemas de segurança e operação.',
+    body: [
+      '<p>Em armazéns de açúcar a granel, a análise estrutural deve considerar a presença de cargas permanentes, ações de vento, corrosão em pontos específicos e deformações acumuladas ao longo do tempo.</p>',
+      '<p>Patologias como fissuras, deslocamentos, corrosão de elementos metálicos e problemas nas fundações podem comprometer a estabilidade do sistema sem sinais imediatos.</p>',
+      '<p>Uma boa inspeção combina vistoria técnica, medições, avaliação de danos e definição clara de critérios para reforço ou intervenção.</p>'
+    ]
+  },
+  pisos: {
+    category: 'Pisos Industriais',
+    title: 'Critérios para Pisos Industriais de Alto Desempenho',
+    summary: 'Pisos industriais precisam ser projetados para resistir à carga, ao tráfego e à agressividade química com durabilidade e baixo custo de manutenção.',
+    body: [
+      '<p>O desempenho de um piso industrial depende de fatores como espessura do concreto, resistência característica, tipo de armação, juntas e acabamento superficial.</p>',
+      '<p>Em ambientes com tráfego pesado e condições agressivas, a escolha do sistema de proteção e a compatibilidade entre sub-base e revestimento são determinantes.</p>',
+      '<p>Um projeto bem executado reduz a necessidade de reforços e melhora a operação diária sem comprometer a segurança da área industrial.</p>'
+    ]
+  },
+  tanques: {
+    category: 'Tanques e Reservatórios',
+    title: 'Projeto de Tanques Industriais: Aspectos Críticos',
+    summary: 'Tanques industriais exigem atenção especial a carregamentos, corrosão, ancoragem e comportamento estrutural ao longo da vida útil.',
+    body: [
+      '<p>Na análise de tanques, a pressão hidrostática e a ação do produto armazenado precisam ser avaliadas com precisão para evitar deformações e falhas prematuras.</p>',
+      '<p>Além disso, a corrosão é um fator estratégico, principalmente em estruturas expostas a ambientes agressivos ou produtos químicos.</p>',
+      '<p>O detalhamento da ancoragem, da base e das juntas é fundamental para garantir desempenho, segurança e facilidade de manutenção.</p>'
+    ]
+  }
+};
+
+const blogModal = document.getElementById('blog-modal');
+const blogModalTitle = document.getElementById('blog-modal-title');
+const blogModalBadge = document.getElementById('blog-modal-badge');
+const blogModalSummary = document.querySelector('.blog-modal-summary');
+const blogModalBody = document.querySelector('.blog-modal-body');
+const closeBlogModalBtn = document.querySelector('.blog-modal-close');
+const blogModalBackdrop = document.querySelector('.blog-modal-backdrop');
+const blogGrid = document.getElementById('blog-grid');
+
+function renderBlogCards() {
+  if (!blogGrid) return;
+
+  const newsletterCard = document.createElement('div');
+  newsletterCard.className = 'post-card post-card-newsletter';
+  newsletterCard.style.background = 'rgba(232,97,26,.1)';
+  newsletterCard.style.borderLeft = '3px solid var(--accent)';
+  newsletterCard.innerHTML = `
+    <span class="post-tag" style="color:var(--accent2)">Newsletter</span>
+    <div class="post-title">Receba Conteúdo Técnico</div>
+    <p class="post-excerpt" style="margin-bottom:20px">Artigos, normas atualizadas e cases de projetos industriais diretamente no seu e-mail.</p>
+    <a class="btn-primary" href="#contato" style="font-size:14px;padding:12px 24px">Quero Receber</a>
+  `;
+
+  Object.entries(blogArticles).forEach(([postId, article]) => {
+    const card = document.createElement('div');
+    card.className = 'post-card';
+    card.setAttribute('data-post-id', postId);
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.innerHTML = `
+      <div class="post-title">${article.title}</div>
+      <p class="post-excerpt">${article.summary}</p>
+    `;
+
+    card.addEventListener('click', () => openBlogModal(postId));
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openBlogModal(postId);
+      }
+    });
+
+    blogGrid.appendChild(card);
+  });
+
+  blogGrid.appendChild(newsletterCard);
+}
+
+function openBlogModal(postId) {
+  const article = blogArticles[postId];
+  if (!article) return;
+
+  blogModalBadge.textContent = article.category || 'Conteúdo Técnico';
+  blogModalTitle.textContent = article.title;
+  blogModalSummary.textContent = article.summary;
+  blogModalBody.innerHTML = article.body.join('');
+  blogModal.classList.add('open');
+  blogModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeBlogModal() {
+  blogModal.classList.remove('open');
+  blogModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+renderBlogCards();
+
+closeBlogModalBtn.addEventListener('click', closeBlogModal);
+blogModalBackdrop.addEventListener('click', closeBlogModal);
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && blogModal.classList.contains('open')) {
+    closeBlogModal();
+  }
+});
+
 // ── Contact Info (Centralized) ──
 const contactInfo = {
   email: 'sander@bssprojetos.com',
@@ -137,42 +268,95 @@ clients.forEach(({ src, alt }) => {
   // }
 
   // ── Form submit ──
-  function submitForm(e) {
-    e.preventDefault();
+  // function submitForm(e) {
+  //   e.preventDefault();
 
-    const form = e.target;
-    const btn = form.querySelector('.form-submit');
+  //   const form = e.target;
+  //   const btn = form.querySelector('.form-submit');
 
-    const nome = form.querySelector('#nome').value.trim();
-    const empresa = form.querySelector('#empresa').value.trim();
-    const telefone = form.querySelector('#telefone').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const mensagem = form.querySelector('#mensagem').value.trim();
+  //   const nome = form.querySelector('#nome').value.trim();
+  //   const empresa = form.querySelector('#empresa').value.trim();
+  //   const telefone = form.querySelector('#telefone').value.trim();
+  //   const email = form.querySelector('#email').value.trim();
+  //   const mensagem = form.querySelector('#mensagem').value.trim();
 
-    const assunto = 'Novo contato pelo formulário do site - BSS Projetos';
-    const corpo = [
-      'Você recebeu um novo contato realizado pelo formulário do site.',
-      '',
-      `Nome: ${nome || 'Não informado'}`,
-      `Empresa: ${empresa || 'Não informada'}`,
-      `Telefone: ${telefone || 'Não informado'}`,
-      `E-mail: ${email || 'Não informado'}`,
-      `Mensagem: ${mensagem || 'Sem mensagem adicional.'}`,
-      '',
-      `Enviado em: ${new Date().toLocaleString('pt-BR')}`
-    ].join('\n');
+  //   const assunto = 'Novo contato pelo formulário do site - BSS Projetos';
+  //   const corpo = [
+  //     'Você recebeu um novo contato realizado pelo formulário do site.',
+  //     '',
+  //     `Nome: ${nome || 'Não informado'}`,
+  //     `Empresa: ${empresa || 'Não informada'}`,
+  //     `Telefone: ${telefone || 'Não informado'}`,
+  //     `E-mail: ${email || 'Não informado'}`,
+  //     `Mensagem: ${mensagem || 'Sem mensagem adicional.'}`,
+  //     '',
+  //     `Enviado em: ${new Date().toLocaleString('pt-BR')}`
+  //   ].join('\n');
 
-    window.location.href = `mailto:${contactInfo.email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+  //   window.location.href = `mailto:${contactInfo.email}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
 
-    btn.textContent = '✓ Mensagem Pronta para Envio';
-    btn.style.background = '#25a244';
+  //   btn.textContent = '✓ Mensagem Pronta para Envio';
+  //   btn.style.background = '#25a244';
 
-    setTimeout(() => {
-      btn.textContent = 'Solicitar Proposta →';
-      btn.style.background = '';
+  //   setTimeout(() => {
+  //     btn.textContent = 'Solicitar Proposta →';
+  //     btn.style.background = '';
+  //     form.reset();
+  //   }, 3000);
+  // }
+
+  async function submitForm(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+
+  const nome = form.querySelector('#nome').value.trim();
+  const empresa = form.querySelector('#empresa').value.trim();
+  const telefone = form.querySelector('#telefone').value.trim();
+  const email = form.querySelector('#email').value.trim();
+  const mensagem = form.querySelector('#mensagem').value.trim();
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '4835277f-fdc1-496d-a4f6-c7ec81482531',
+        subject: 'Novo contato pelo formulário do site - BSS Projetos',
+        from_name: nome || 'Site BSS Projetos',
+        nome,
+        empresa,
+        telefone,
+        email,
+        mensagem
+      })
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      btn.textContent = '✓ Mensagem Enviada';
+      btn.style.background = '#25a244';
       form.reset();
-    }, 3000);
+    } else {
+      throw new Error(result.message || 'Erro ao enviar');
+    }
+  } catch (err) {
+    btn.textContent = '✗ Erro, tente novamente';
+    btn.style.background = '#c0392b';
+    console.error(err);
   }
+
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.textContent = 'Solicitar Proposta →';
+    btn.style.background = '';
+  }, 3000);
+}
 
   // ── Nav scroll effect ──
   window.addEventListener('scroll', () => {
