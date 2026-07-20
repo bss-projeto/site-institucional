@@ -369,32 +369,27 @@
     <div class="eyebrow reveal">Conteúdo Técnico</div>
     <h2 class="section-title reveal">Conhecimento que<br>Gera Confiança</h2>
     <div class="blog-grid reveal">
-      <div class="post-card">
-        <!-- <span class="post-tag">Fundações</span> -->
+      <div class="post-card" data-post-id="fundacoes" role="button" tabindex="0">
         <div class="post-title">Como Projetar Fundações para Equipamentos Industriais</div>
         <p class="post-excerpt">Os principais critérios técnicos para dimensionamento de fundações sob cargas dinâmicas, vibrações e equipamentos pesados em plantas industriais.</p>
       </div>
-      <div class="post-card">
-        <!-- <span class="post-tag">Estruturas Metálicas</span> -->
+      <div class="post-card" data-post-id="estruturas" role="button" tabindex="0">
         <div class="post-title">Principais Erros em Estruturas Metálicas Industriais</div>
         <p class="post-excerpt">Do detalhamento de ligações ao dimensionamento de pilares: os erros mais comuns que comprometem a segurança e a vida útil das estruturas.</p>
       </div>
-      <div class="post-card">
-        <!-- <span class="post-tag">Inspeção Estrutural</span> -->
+      <div class="post-card" data-post-id="inspecao" role="button" tabindex="0">
         <div class="post-title">Inspeção Estrutural em Armazéns de Açúcar</div>
         <p class="post-excerpt">Metodologia de inspeção e avaliação estrutural para armazéns de açúcar a granel — patologias frequentes e critérios de intervenção.</p>
       </div>
-      <div class="post-card">
-        <!-- <span class="post-tag">Pisos Industriais</span> -->
+      <div class="post-card" data-post-id="pisos" role="button" tabindex="0">
         <div class="post-title">Critérios para Pisos Industriais de Alto Desempenho</div>
         <p class="post-excerpt">Espessura, juntas, armação e acabamento: o que determina a performance e a durabilidade de pisos em concreto armado industrial.</p>
       </div>
-      <div class="post-card">
-        <!-- <span class="post-tag">Tanques</span> -->
+      <div class="post-card" data-post-id="tanques" role="button" tabindex="0">
         <div class="post-title">Projeto de Tanques Industriais: Aspectos Críticos</div>
         <p class="post-excerpt">Pressão hidrostática, corrosão e ancoragem — as variáveis que mais impactam o projeto de reservatórios e tanques industriais.</p>
       </div>
-      <div class="post-card" style="background:rgba(232,97,26,.1);border-left:3px solid var(--accent)">
+      <div class="post-card post-card-newsletter" style="background:rgba(232,97,26,.1);border-left:3px solid var(--accent)">
         <span class="post-tag" style="color:var(--accent2)">Newsletter</span>
         <div class="post-title">Receba Conteúdo Técnico</div>
         <p class="post-excerpt" style="margin-bottom:20px">Artigos, normas atualizadas e cases de projetos industriais diretamente no seu e-mail.</p>
@@ -403,6 +398,29 @@
     </div>
   </div>
 </section>
+
+<div class="blog-modal" id="blog-modal" aria-hidden="true">
+  <div class="blog-modal-backdrop" data-close-modal></div>
+  <div class="blog-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="blog-modal-title">
+    <button class="blog-modal-close" type="button" aria-label="Fechar conteúdo">×</button>
+    <div class="blog-modal-content">
+      <div class="blog-modal-header">
+        <span class="blog-modal-badge" id="blog-modal-badge">Conteúdo Técnico</span>
+      </div>
+      <div class="blog-modal-hero">
+        <div class="blog-modal-hero-inner">
+          <span class="blog-modal-hero-tag">Artigo técnico</span>
+          <h3 class="blog-modal-title" id="blog-modal-title"></h3>
+          <p class="blog-modal-summary"></p>
+        </div>
+      </div>
+      <div class="blog-modal-body"></div>
+      <div class="blog-modal-footer">
+        <a class="blog-modal-cta" href="#contato">Falar com a BSS</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- CLIENTES -->
  <!-- CLIENTES -->
