@@ -215,7 +215,7 @@ function populateContactLinks() {
     { src: './assets/img/logos/engetrad_final.png', alt: 'Grupo C' },
     { src: './assets/img/logos/habiarte_final.png', alt: 'Habiarte' },
     { src: './assets/img/logos/uberpostos_final.png', alt: 'Uberpostos' },
-    { src: './assets/img/logos/bpbunge_final.png', alt: 'BP Bunge' },
+    { src: './assets/img/logos/atvos_final.png', alt: 'ATVOS' },
     { src: './assets/img/logos/guabi_final.png', alt: 'Guabi' },
     { src: './assets/img/logos/alfa_final.png', alt: 'Alfa' },
     { src: './assets/img/logos/alta mgiana_final.png', alt: 'Alta MGIANA' },

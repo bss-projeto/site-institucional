@@ -4,12 +4,13 @@
     --ink:    #0D1B2A;
     --steel:  #1E2D3D;
     --mid:    #2E4259;
-    --accent: #E8611A;
-    --accent2:#FF8C42;
+    --accent: #FFB600;
+    --accent2:#FFE4AA;
     --smoke:  #8A99A8;
     --pale:   #C4CDD6;
     --paper:  #F0EDE8;
     --white:  #FFFFFF;
+    --blue:   #004E89;
     --font-display: 'Barlow Condensed', sans-serif;
     --font-body:    'Inter', sans-serif;
   }
@@ -44,7 +45,7 @@
 
   /* ─── NAV ─── */
   nav {
-    background: #ffffff;
+    background: var(--white);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     position: sticky; top: 0; z-index: 100;
@@ -81,7 +82,7 @@
   .nav-links a {
     font-family: var(--font-body); font-size: 13px;
     font-weight: 500; letter-spacing: .08em;
-    text-transform: uppercase; color: #033F75;
+    text-transform: uppercase; color: var(--blue);
     text-decoration: none; transition: color .2s;
   }
   .nav-links a:hover { color: var(--accent); }
@@ -93,11 +94,11 @@
     cursor: pointer; transition: background .2s;
     text-decoration: none;
   }
-  .nav-cta:hover { background: var(--accent2); }
+  .nav-cta:hover { background: var(--accent2); color: var(--blue); }
 
   /* Hamburger */
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-  .hamburger span { width: 24px; height: 2px; background: #033F75; transition: .3s; }
+  .hamburger span { width: 24px; height: 2px; background: var(--blue); transition: .3s; }
   .mobile-menu { display: none; flex-direction: column; background: var(--steel); padding: 20px 24px; gap: 16px; }
   .mobile-menu a { color: var(--pale); text-decoration: none; font-size: 15px; font-weight: 500; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
   .mobile-menu.open { display: flex; }
@@ -162,7 +163,7 @@
     text-transform: uppercase; border: none; cursor: pointer;
     text-decoration: none; display: inline-block; transition: background .2s, transform .15s;
   }
-  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--accent2); color: var(--blue); transform: translateY(-1px); }
   .btn-outline {
     border: 1px solid var(--pale); color: var(--pale);
     padding: 16px 32px; font-family: var(--font-display);
@@ -170,7 +171,7 @@
     text-transform: uppercase; background: transparent; cursor: pointer;
     text-decoration: none; display: inline-block; transition: .2s;
   }
-  .btn-outline:hover { border-color: var(--white); color: var(--white); }
+  .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
 
   /* Hero visual side */
   .hero-visual {
@@ -192,7 +193,7 @@
     position: absolute; bottom: 12px; left: 12px;
     font-family: var(--font-display); font-size: 11px; font-weight: 700;
     letter-spacing: .12em; text-transform: uppercase;
-    color: var(--white); background: rgba(232,97,26,.85); padding: 4px 10px;
+    color: var(--white); background: var(--accent); padding: 4px 10px;
   }
 
   /* ─── NUMBERS ─── */
@@ -283,7 +284,7 @@
   .about-img::after {
     content: '';
     position: absolute; inset: 12px;
-    border: 2px solid rgba(232,97,26,.75);
+    border: 2px solid var(--accent);
     pointer-events: none;
   }
   .about-grid .section-title,
@@ -369,7 +370,7 @@
     position: absolute; bottom: 12px; left: 12px;
     font-family: var(--font-display); font-size: 11px; font-weight: 700;
     letter-spacing: .12em; text-transform: uppercase;
-    color: var(--white); background: rgba(232,97,26,.85); padding: 4px 10px;
+    color: var(--white); background: var(--accent); padding: 4px 10px;
     margin-bottom: 16px; display: inline-block;
     z-index: 2;
   }
